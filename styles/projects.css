@@ -1,0 +1,59 @@
+/* ====================================================== */
+/*              PROJECTS SECTION STYLES                   */
+/* ====================================================== */
+
+.section-title {
+    color: var(--gold-main);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.project-btn {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px;
+    /* Fixed width for consistency */
+    border: 2px solid transparent;
+    /* default border */
+}
+
+.project-btn:hover {
+    transform: translateY(-5px);
+    /* Lift up slightly */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--gold-main);
+    /* Highlight border */
+    color: var(--gold-main);
+}
+
+.project-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}

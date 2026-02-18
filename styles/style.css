@@ -1,0 +1,516 @@
+@import url('projects.css');
+
+:root {
+    --bg-color: #fce4ec;
+    /* Light Pinkish background for a softer feel */
+    --text-color: #333333;
+    /* Dark Grey for text */
+    --gold-main: #d81b60;
+    /* Deep Pink/Red instead of Gold for a distinct look, or keep Gold if preferred. Let's stick to a Gold accent but maybe darker/richer for light mode contrast? Actually, let's keep Gold as requested for "replicate... light mode", but tweak it for visibility. Let's use a darker gold/orange. Or maybe just standard gold but with dark text. Let's try a Rose Gold feel? No, let's stick to the original "Gold" identity but make it work on light. */
+    --gold-main: #cca000;
+    /* Darker Gold for better contrast on light */
+    --muted-color: #666666;
+    --card-bg: #ffffff;
+    --card-border: #e0e0e0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+}
+
+/* Subtle texture/gradient overlay if needed, or just clean color */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(135deg, #fdfbf7 0%, #fce4ec 100%);
+    /* Soft gradient */
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--gold-main) !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* glow effect - softer for light mode */
+h1,
+h2,
+h3 {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================
+   NAVBAR STYLES
+   ================== */
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff !important;
+    /* Force white navbar */
+}
+
+/* Custom Logo Styling */
+.navbar-brand .brand-main-text {
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+.navbar-brand .brand-sub-text {
+    font-weight: 400;
+    font-size: 0.7rem;
+    letter-spacing: 4.5px;
+    display: block;
+    line-height: 0.5;
+    margin-left: 2px;
+    color: var(--gold-main);
+}
+
+/* Centered Nav Links */
+.navbar-nav {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #555 !important;
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--gold-main) !important;
+}
+
+/* Active Link */
+.nav-link.active {
+    font-weight: 700;
+    color: var(--gold-main) !important;
+    position: relative;
+}
+
+.nav-link.active span::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 3px;
+    background-color: var(--gold-main);
+}
+
+/* Styling for the dropdown menu */
+.dropdown-menu {
+    border-radius: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-item {
+    transition: all 0.3s ease;
+    text-align: center;
+    color: #333;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: var(--gold-main);
+}
+
+.dropdown-item.dropdown-item-active:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-item-active {
+    color: var(--gold-main) !important;
+    font-weight: 700;
+}
+
+.navbar-nav .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown-divider {
+    height: 1px;
+    margin: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 0;
+}
+
+/* Right Side Elements */
+.navbar-text {
+    color: #666;
+    font-weight: 500;
+}
+
+/* ========================
+   NAVBAR SOCIAL ICONS
+   ======================== */
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icon {
+    color: #888;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.social-icon:hover {
+    color: var(--gold-main);
+    transform: scale(1.15) translateY(-2px);
+}
+
+.btn-join-now {
+    background-color: var(--gold-main);
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--gold-main);
+}
+
+.btn-join-now:hover {
+    background-color: transparent;
+    color: var(--gold-main);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px) {
+    .navbar-text {
+        display: none;
+    }
+}
+
+/* ==================
+   LOADER STYLES
+   ================== */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.75s ease;
+}
+
+#loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.vinyl-spinner {
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    /* Light grey vinyl */
+    border-radius: 50%;
+    position: relative;
+    animation: spin 1.2s linear infinite;
+    box-shadow:
+        inset 0 0 0 5px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 10px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 15px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 20px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 25px rgba(0, 0, 0, 0.05);
+}
+
+.vinyl-spinner::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    background-color: var(--gold-main);
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ====================================================== */
+/*              PERFORMANCES PAGE STYLES                  */
+/* ====================================================== */
+
+/* Center Image resizing - Set to 50% as requested */
+#video-player-frame {
+    overflow: hidden;
+    width: 50%;
+    /* Requested 50% smaller size */
+    margin: 0 auto;
+    /* Center it */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 5px solid #fff;
+    /* Nice white frame */
+}
+
+#video-player-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* arrow buttons - Dark for light mode */
+.nav-arrow-btn {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    border: 2px solid #ddd;
+    color: #555;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.nav-arrow-btn:hover {
+    background-color: var(--gold-main);
+    color: #fff;
+    border-color: var(--gold-main);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* play button */
+.play-btn-circle {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    border: 2px solid var(--gold-main);
+    color: var(--gold-main);
+    background-color: #fff;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.play-btn-circle:hover {
+    background-color: var(--gold-main);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* waveform player - needs inversion for light mode? */
+#waveform-container {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    max-width: 600px;
+    /* Limit width */
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    background-image: url('../images/waveform.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: invert(0);
+    /* Normal colors might be better for light mode, depends on the GIF */
+    opacity: 0.6;
+}
+
+/* --- PERFORMANCES PAGE - TRANSITION STYLES --- */
+#video-player-frame,
+#performance-title,
+#performance-description {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+/* ====================================================== */
+/*          FINAL: PAST PERFORMANCES TABLE STYLES         */
+/* ====================================================== */
+#past-performances-table {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 5rem;
+    overflow: hidden;
+}
+
+.table thead th {
+    border: none;
+    color: var(--gold-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    padding-bottom: 1rem;
+    vertical-align: middle;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.table tbody tr:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.table tbody td {
+    border-top: none;
+    padding: 1.5rem 1rem;
+    vertical-align: middle;
+    color: #555;
+    font-weight: 500;
+}
+
+/* --- GLOBAL SMOOTH SCROLLING --- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+/* --- STYLING FOR THE NEW SCROLL DOWN LINK --- */
+.scroll-down-link {
+    color: #888;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.scroll-down-link:hover {
+    color: var(--gold-main);
+}
+
+.scroll-down-link i {
+    display: block;
+    font-size: 2rem;
+}
+
+.join-cta-section {
+    padding: 6rem 0;
+    background-color: #fce4ec;
+    /* Clean color instead of image */
+    position: relative;
+    color: #333;
+    text-align: center;
+}
+
+.join-cta-section h2 {
+    color: #333;
+}
+
+.btn-join-now-cta {
+    background-color: var(--gold-main);
+    color: #fff;
+    font-weight: 700;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-join-now-cta:hover {
+    background-color: #333;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ================== 
+   SITE FOOTER
+   ================== */
+.site-footer {
+    background-color: #ffffff;
+    padding: 4rem 0;
+    color: #666;
+    border-top: 1px solid #eee;
+}
+
+.footer-links {
+    margin-bottom: 0;
+}
+
+.footer-links .list-inline-item {
+    margin-right: 1.5rem;
+}
+
+.footer-links a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold-main);
+}
+
+.footer-divider {
+    border-top: 1px solid #eee;
+    margin: 2rem 0;
+    opacity: 1;
+}
+
+.footer-social-icons a {
+    color: #888;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    color: var(--gold-main);
+}

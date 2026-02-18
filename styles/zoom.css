@@ -1,0 +1,32 @@
+/* ====================================================== */
+/*              PERFORMANCES PAGE STYLES                  */
+/* ====================================================== */
+
+/* Center Image resizing - Set to 50% as requested */
+#video-player-frame {
+    overflow: hidden;
+    width: 50%;
+    /* Requested 50% smaller size */
+    margin: 0 auto;
+    /* Center it */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 5px solid #fff;
+    /* Nice white frame */
+    border-radius: 50% !important;
+    /* Make it a circle! User requested "face only", circle is best for that */
+}
+
+#video-player-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* ZOOM AND CROP SETTINGS FOR NABIL.JPG */
+    /* Focus on the guy in the brown cap (Left side) */
+    object-position: 25% 30%;
+    /* Shift view to the left and slightly up */
+    transform: scale(1.6);
+    /* Zoom in by 60% */
+    transform-origin: 30% 30%;
+    /* Ensure the zoom centers on the face */
+}
