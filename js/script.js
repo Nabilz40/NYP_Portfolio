@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 1. Data for our performances (Keeping one as default for the profile picture/info)
     const performances = [
-        { title: 'Nabil Hussain Shah', description: "A passionate Software Developer with an extensive background in building web applications and software solutions, dedicated to creating projects that help the community.", image: 'images/nabil2.jpg', youtubeId: '9LM7h5Ac7WE' },
+        { title: 'Nabil Hussain Shah', description: "A passionate Software Developer with an extensive background in building web applications and software solutions, dedicated to creating projects that help the community.", image: 'images/nabil2.JPG', youtubeId: '9LM7h5Ac7WE' },
     ];
 
     // 2. Find the HTML elements we need
