@@ -11,40 +11,52 @@
 
 .project-btn {
     display: flex;
+    flex-direction: column;
+    /* Vertical Layout */
     align-items: center;
+    justify-content: center !important;
+    /* Override HTML bootstrap classes */
     background-color: white;
-    padding: 15px 20px;
-    border-radius: 12px;
+    padding: 25px 15px;
+    /* Slightly smaller padding */
+    border-radius: 18px;
+    /* Slightly smaller radius */
     text-decoration: none;
     color: var(--text-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    /* Soft shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Stronger shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 280px;
-    /* Fixed width for consistency */
+    width: 200px;
+    /* 10% smaller width */
+    height: 200px;
+    /* 10% smaller height */
     border: 2px solid transparent;
-    /* default border */
+    text-align: center;
 }
 
 .project-btn:hover {
     transform: translateY(-5px);
-    /* Lift up slightly */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     border-color: var(--gold-main);
-    /* Highlight border */
     color: var(--gold-main);
 }
 
 .project-logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
+    width: 90px;
+    /* 10% smaller logo */
+    height: 90px;
+    border-radius: 50%;
+    /* Circular Logo looks better top-centered */
     overflow: hidden;
     flex-shrink: 0;
-    background-color: #eee;
+    background-color: #f8f9fa;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 15px;
+    /* Space between logo and text */
+    margin-right: 0 !important;
+    /* Override the me-3 from HTML */
 }
 
 .project-logo img {
@@ -55,5 +67,7 @@
 
 .project-name {
     font-size: 1.1rem;
-    font-weight: 600;
+    /* Slightly smaller font */
+    font-weight: 700;
+    line-height: 1.2;
 }
