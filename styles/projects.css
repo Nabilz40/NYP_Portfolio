@@ -7,6 +7,10 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-align: center;
+    /* Center the title */
+    width: 100%;
+    /* Ensure it spans full width to center properly */
 }
 
 .project-btn {
@@ -26,10 +30,10 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     /* Stronger shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 200px;
-    /* 10% smaller width */
+    width: 260px;
+    /* Made WIDER as requested (was 200px) */
     height: 200px;
-    /* 10% smaller height */
+    /* Kept height same or similar */
     border: 2px solid transparent;
     text-align: center;
 }
