@@ -83,7 +83,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (nextBtn) nextBtn.addEventListener("click", () => changeProject(1));
 
     // Load initial project
-    updateProjectUI(0);
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectIndex = urlParams.get('project');
+
+    if (projectIndex !== null && !isNaN(projectIndex) && projectIndex >= 0 && projectIndex < projects.length) {
+        currentIndex = parseInt(projectIndex);
+    }
+
+    updateProjectUI(currentIndex);
 });
 
 function changeProject(direction) {
