@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function playVideo() {
         const currentPerformance = performances[currentIndex];
         const youtubeEmbedUrl = `https://www.youtube.com/embed/${currentPerformance.youtubeId}?autoplay=1&rel=0`;
-        playerFrame.innerHTML = `<iframe src="${youtubeEmbedUrl}" title="YouTube video player" frameborder="0" style="width:100%; height:100%;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        playerFrame.innerHTML = `<iframe src="${youtubeEmbedUrl}" title="YouTube video player" frameborder="0" style="width:100%; height:100%;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
         playButton.style.display = 'none';
     }
 
