@@ -106,6 +106,22 @@ function updateProjectUI(index) {
 
     // Update Video
     const videoElement = document.getElementById("project-video");
+    const videoContainer = document.getElementById("video-container");
+
+    // Dynamic Video Container Sizing (Portrait vs Landscape)
+    if (project.title === "Geulja Snap App") {
+        videoContainer.classList.remove("ratio-16x9");
+        videoContainer.classList.add("ratio");
+        videoContainer.style.aspectRatio = "9/16";
+        videoContainer.style.maxWidth = "350px";
+        videoElement.style.objectFit = "contain";
+    } else {
+        videoContainer.classList.add("ratio-16x9");
+        videoContainer.style.aspectRatio = "";
+        videoContainer.style.maxWidth = "100%";
+        videoElement.style.objectFit = "cover";
+    }
+
     if (project.videoSrc) {
         videoElement.src = project.videoSrc;
         videoElement.style.display = "block";
