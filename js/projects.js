@@ -22,7 +22,7 @@ const projects = [
     },
     {
         title: "Geulja Snap App",
-        videoSrc: "",
+        videoSrc: "images/geuljasnap.mp4",
         description: "Geulja Snap is an interactive vocabulary learning application disguised as an Android app. It aims to help learners rapidly memorize Korean alphabet characters using spaced repetition and audio feedback.",
         scope: {
             a1: "Created for language learners who want an engaging mobile environment to practice Korean reading and pronunciation on the go.",
