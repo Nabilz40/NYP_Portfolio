@@ -40,6 +40,27 @@ const projects = [
             a1: "The application was highly successful. The shift to a Capacitor shell worked flawlessly, and the app compiled to an Android APK without critical build errors.",
             a2: "We successfully reduced audio latency to under 300ms for flashcard flipping by optimizing the TTS request lifecycle."
         }
+    },
+    {
+        title: "SoundCard Website",
+        videoSrc: "",
+        description: "A comprehensive, responsive club website dedicated to NYP's SoundCard Club. It serves as a central hub to showcase past performances, advertise upcoming workshops, and streamline new member registrations.",
+        scope: {
+            a1: "The website was created for the NYP SoundCard Club committee to improve their digital presence and provide an accessible platform for prospective members.",
+            a2: "The main goal was to design an intuitive, modern user interface that highlighted the club's vibrant culture. A key challenge was organizing various events (Workshops, Showcases) into a clean format."
+        },
+        role: {
+            a1: "As the Front-End Web Developer and UI Designer, I was responsible for wireframing the layouts, selecting the color palettes, and coding the interactive front-end elements.",
+            a2: "I utilized Bootstrap 5 to ensure full mobile responsiveness and implemented custom CSS for thematic styling, such as the vinyl record loader and dynamic hover effects."
+        },
+        process: {
+            a1: "The work process involved gathering requirements from the club, creating high-fidelity mockups, and iteratively developing the HTML/CSS templates across multiple pages (About Us, FAQ, Join Us).",
+            a2: "I faced challenges with ensuring the complex multi-level navbar remained accessible on mobile devices, which I solved by carefully restructuring the Bootstrap collapse behaviors."
+        },
+        outcome: {
+            a1: "The final project was highly successful, delivering a polished, professional website that perfectly aligned with the club's artistic identity.",
+            a2: "The measurable outcome was a cohesive, multi-page web experience with zero dead links, optimized image assets, and fully functional interactive elements ready for deployment."
+        }
     }
 ];
 
