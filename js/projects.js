@@ -43,7 +43,7 @@ const projects = [
     },
     {
         title: "SoundCard Website",
-        videoSrc: "",
+        videoSrc: "images/SoundCard.mp4",
         description: "A comprehensive, responsive club website dedicated to NYP's SoundCard Club. It serves as a central hub to showcase past performances, advertise upcoming workshops, and streamline new member registrations.",
         scope: {
             a1: "The website was created for the NYP SoundCard Club committee to improve their digital presence and provide an accessible platform for prospective members.",
